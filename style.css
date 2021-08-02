@@ -15,9 +15,9 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 1400px) {
     * {
-        font-size: 3vw;
+        font-size: 1.2vw;
     }
 }
 
@@ -29,7 +29,7 @@ html {
 }
 
 body {
-    background: url('./images/sunshine.jpg') center/100% 100% no-repeat;
+    background: url('') center/100% 100% no-repeat;
     font-family: 'Open Sans';
     margin: 0;
 }

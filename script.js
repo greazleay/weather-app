@@ -1,7 +1,7 @@
 async function getWeather(city) {
+  let fetchCity, fetchWeather;
+  
   try {
-    const access_key = "b6b794895416bf47d4bbdbc5e02b3cf2";
-    let fetchCity;
     try {
         fetchCity = await fetch(
             `https://nominatim.openstreetmap.org/?addressdetails=1&q=${city}&format=json&limit=1`
@@ -14,14 +14,19 @@ async function getWeather(city) {
     }
     
     const data = await fetchCity.json();
-    switch (true) {
-      case Object.is(data[0].lat, undefined):
-      case Object.is(data[0].lon, undefined):
-        throw new Error("Oops!!! City does not exist");
+
+    try {
+      const access_key = "b6b794895416bf47d4bbdbc5e02b3cf2";
+      fetchWeather = await fetch(
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${data[0].lat}&lon=${data[0].lon}&units=metric&exclude=minutely,hourly,alerts&appid=${access_key}`
+      );
+    } catch (error) {
+      switch (true) {
+        case !Object.is(data, []):
+          throw new Error("Oops!!! City does not exist");
+      }
+      throw error
     }
-    const fetchWeather = await fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${data[0].lat}&lon=${data[0].lon}&units=metric&exclude=minutely,hourly,alerts&appid=${access_key}`
-    );
     
     const sevenDays = await fetchWeather.json();
     const options = [
@@ -80,7 +85,6 @@ const handleChange = () => {
   if (main.childElementCount !== 0) {
     [...main.childNodes].forEach((child) => {
       main.removeChild(child);
-      console.log("removed!!!");
     });
   };
   getWeather(city.value);
