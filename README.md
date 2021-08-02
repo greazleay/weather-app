@@ -2,7 +2,7 @@
 
 ### About
 
-Todo-list App from [the Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/weather-app) Curriculum.
+Weather App from [the Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/weather-app) Curriculum.
 
 ### Contributors
 
