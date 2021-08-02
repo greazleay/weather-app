@@ -8,6 +8,11 @@ Weather App from [the Odin Project](https://www.theodinproject.com/paths/full-st
 
 * Lekan Adetunmbi
 
+### Powered By:
+
+* [OpenStreetMap](https://www.openstreetmap.org/)
+* [OpenWeather](https://openweathermap.org/)
+
 ### Info
 
 * License: MIT
