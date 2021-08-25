@@ -58,7 +58,7 @@ body {
 }
 
 .nav-bar h1::before {
-    content: '🌼';
+    content: '🌄 ';
 }
 
 .nav-bar input {

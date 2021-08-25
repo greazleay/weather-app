@@ -63,7 +63,7 @@ function addTRD(ar, icon, parent) {
 addElement('h1', 'Weather Report', nav)
 
 const city = document.createElement('input');
-city.placeholder = 'Your City Weather';
+city.placeholder = 'Enter City Name';
 nav.append(city)
 
 addElement('p', "© 2021 Pollaroid All rights reserved", footer);
